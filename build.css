@@ -1,0 +1,203 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-size: 16px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* padding: 0 50px; */
+    width: 100vw;
+    overflow-x: hidden;
+    position: relative;
+}
+
+@keyframes move-img {
+    0%{
+        transform: translateX(0);
+    }
+
+    100%{
+        transform: translateX(72vw);
+    }
+    
+}
+
+
+@keyframes move-text {
+    0%{
+        transform: translateX(0);
+    }
+
+    100%{
+        transform: translateX(-50vw)
+    }
+}
+
+@keyframes move-map{
+    0%{
+        transform: translateX(0);
+    }
+
+    100%{
+        transform: translateX(20vw);
+
+    }
+}
+
+
+
+
+
+#logo{
+    width: 100px;
+    height: 100px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+
+nav{
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    z-index: 1000;
+    background-color: white;
+    padding: 0 50px
+
+}
+
+main{
+    /* border: 1px solid green; */
+    margin-top: 100px;
+    padding: 10px
+}
+
+
+#nav-buttons a{
+    text-decoration: none;
+    color: black;
+    padding-right: 30px;
+    border-right: 2px solid black;
+}
+
+#nav-buttons{
+    display: flex;
+    gap: 10px;
+}
+
+#nav-buttons #last{
+    border: none
+}
+
+
+
+
+
+
+#icon{
+    visibility: hidden;
+}
+
+
+#sect-1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+    position: relative;
+}
+
+#sect-1 #first-img{
+    animation: move-img 1.5s linear 1 reverse;
+    margin-top: 100px;
+}
+
+#sect-1 #terntribe{
+    font-size: 30px;
+    animation: move-text 1.5s 1 ease-out reverse; 
+}
+
+#sect-1 #build{
+    position: absolute;
+    right: 250px;
+}
+
+#sect-2{
+    display: flex;
+    gap: 10px;
+    width: 100VW;
+    padding: 50px;
+}
+
+#sect-2 div{
+    padding: 20px;
+    text-align: justify;
+    width: 50%;
+    animation: move-text 1s ease-in 1 reverse;
+}
+
+
+#sect-2 img{
+    margin-left: 30px;
+    animation: move-map  1s linear  1 reverse;
+}
+
+
+
+
+@media only screen and (max-width: 600px){
+    #sect-1{
+        flex-direction: column;
+        gap: 10px;
+        justify-content: flex-start;
+        align-items: flex-start;
+
+    }
+
+    #sect-1 img{
+        margin-top: 0;
+    }
+
+    #sect-1 #build{
+        position: unset;
+        right: unset;
+    }
+
+    #nav-buttons{
+        display: none;
+    }
+
+    #icon{
+        visibility: visible;
+    }
+
+    #sect-2{
+        flex-direction: column;
+        gap: 20px;
+        font-size: 15px;
+    }
+
+    #sect-2 div{
+        width: 100%;
+        padding: unset;
+    }
+
+    body{
+        padding: 0 10px;
+    }
+
+    #sect-1 #first-img{
+        margin-top: unset;
+    }
+}
